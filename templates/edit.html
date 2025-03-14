@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Edit Todo!</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input name="title" placeholder="Input title" value="{{ todo.title }}" />
+        <textarea name="content" placeholder="Input content" >{{ todo.content }}</textarea>
+        <button>Edit Todo</button>
+        {% for message in messages %}
+            <div>{{ message }}</div>
+        {% endfor %}
+    </form>
+</body>
+</html>
